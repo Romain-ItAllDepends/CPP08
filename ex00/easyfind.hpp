@@ -6,28 +6,27 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:06:29 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/18 13:48:55 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/11/18 14:26:56 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
+# include <algorithm>
 # include <iostream>
 # include <list>
 
 template< typename T >
-void	easyfind(T array, int n) {
-	int	i = 0;
-	
+void	easyfind(T array, int n) {	
+	std::list<int>::const_iterator it = array.begin();
 	std::list<int>::const_iterator	ite = array.end();
-	for (std::list<int>::const_iterator it = array.begin();it != ite;it++) {
-		if (*it == n) {
-			std::cout << "It's here! Number found: " << *it << " at the index: " << i << "." << std::endl;
-			return ;
-		}
-		i++;
-	}
-	std::cerr << "Doesn't exist in the list!" << std::endl;
+
+	std::list<int>::const_iterator	i;
+	i = find(it, ite, n);
+	if (i != ite)
+		std::cout << "It's here! Number found: " << *i << "." << std::endl;
+	else
+		std::cerr << "Doesn't exist in the list!" << std::endl;
 }
 
 #endif

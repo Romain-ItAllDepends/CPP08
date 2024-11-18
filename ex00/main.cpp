@@ -6,7 +6,7 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:06:34 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/18 13:49:36 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/11/18 14:27:26 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(void) {
 	lst.push_back(4);
 	lst.push_back(0);
 	lst.push_back(1);
+	
 	easyfind(lst, 0);
 	return (0);
 }
