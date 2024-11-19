@@ -6,13 +6,14 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 08:47:42 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/19 14:17:45 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/11/19 14:39:21 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 #include <cstdlib>
 #include <time.h>
+#include <list>
 
 static void	display(int i) {
 	std::cout << "The number: " << i << "." << std::endl;
@@ -90,6 +91,41 @@ int main(void) {
 	for (;itt < itte;itt++) {
 		std::cout << "The number: " << *itt << "." << std::endl;
 	}
+
+	std::cout << std::endl << "list" << std::endl;
+
+	std::list<int> l;
+	
+	l.push_back(5);
+	l.push_back(17);
+	std::cout << l.back() << std::endl;
+	l.pop_back();
+	std::cout << l.size() << std::endl;
+	l.push_back(3);
+	l.push_back(5);
+	l.push_back(737);
+	l.push_back(0);
+
+	std::cout << std::endl << "start/end" << std::endl << std::endl;
+
+	std::list<int>::iterator itls = l.begin();
+	std::list<int>::iterator itels = l.end();
+	itels--;
+	std::cout << *itls << ", " << *itels << std::endl;
+
+	std::cout << "print all" << std::endl;
+
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+
+	std::cout << std::endl;
+
+	std::for_each(l.begin(), l.end(), display);
 
 	return 0;
 }
